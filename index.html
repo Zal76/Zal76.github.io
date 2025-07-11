@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ToDo List</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!--Tailwind CSS-->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<!--Form Todo-->
+<body class="bg-gray-100 text-gray-800 bg-gradient-to-b from-sky-400 to-blue-200 text-gray-800 min-h-screen" >
+  <div class="max-w-2xl mx-auto p-7 bg-white shadow-md rounded-xl mt-40">
+  <main class="container">
+    <h1 class="mb-7 text-2xl font-bold">Todo List</h1>
+    
+ <form id="todo-form" class="todo-form mb-4">
+  <label for="todo-input" class="font-bold">Task :</label>
+  <input type="text" id="todo-input" placeholder="Add a todo..."
+         class="border rounded p-[4px] bg-white"
+         required />
+  <p id="task-error" class="text-red-600 text-sm mt-1 hidden">Task wajib diisi</p>
+
+  <label for="todo-date" class="font-bold ml-10">Due Date :</label>
+  <input type="date" id="todo-date"
+         class="border rounded p-[4px] bg-white mr-4 mb-1"
+         required />
+  <p id="date-error" class="text-red-600 text-sm mt-1 hidden">Due date wajib diisi</p>
+  <button id="add-btn" type="submit" class="px-3 py-1 bg-blue-500 text-white rounded">+</button>
+</form>
+
+<!-- Button -->
+ <div class="options mb-6 flex items-center gap-">
+  <button id="filter-btn" class="mr-3 ml-17 px-4 py-1 bg-green-500 text-white rounded">Filter</button>
+  <button id="show-all-btn" class="mr-34 px-4 py-1 bg-gray-500 text-white rounded">Tampilkan Semua</button>
+  <button id="delete-all-btn" class="px-4 py-1 bg-red-500 text-white rounded">Delete All</button>
+</div>
+
+
+    <!-- ToDo Table -->
+    <div class="overflow-x-auto mt-6">
+  <table class="table-auto w-xl border border-gray-300 text-sm">
+    <thead class="bg-gray-100 text-left">
+      <tr>
+        <th class="border px-4 py-2">Task</th>
+        <th class="border px-3 py-2">Due Date</th>
+        <th class="border px-4 py-2">Status</th>
+        <th class="border px-4 py-2">Actions</th>
+      </tr>
+    </thead>
+      <tbody id="todo-list">
+        <tr>
+          <td colspan="4" style="text-align:center;">No task found</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  </div>
+<footer>
+    <p>&copy; Copyright Rizal76 2025</p>
+</footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
